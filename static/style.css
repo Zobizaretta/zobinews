@@ -1,0 +1,192 @@
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #f0b90b;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+    max-width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.btn {
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#last-updated {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+#main-title.pulse-effect {
+    animation: pulse-once 1s ease-in-out;
+}
+
+
+.card-positive {
+    border-left: 6px solid #00c853;
+    background-color: #1e2d1f;
+}
+
+.card-negative {
+    border-left: 6px solid #d50000;
+    background-color: #2d1e1e;
+}
+
+.card-neutral {
+    border-left: 6px solid #9e9e9e;
+    background-color: #2b2b2b;
+}
+
+.buy-btn, .sell-btn {
+    width: 100px;
+    margin: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: 0.3s ease;
+}
+
+.buy-btn {
+    background-color: #00c853;
+    color: white;
+}
+
+.buy-btn:hover {
+    background-color: #00e676;
+}
+
+.sell-btn {
+    background-color: #d50000;
+    color: white;
+}
+
+.sell-btn:hover {
+    background-color: #ff1744;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.related-coin {
+    font-style: italic;
+    color: #c0c0c0; /* Coin adı için açık tonda */
+}
+
+
+.card-title {
+    font-size: 1.2rem;
+    color: #ffeb3b; /* Başlıkları belirginleştir */
+}
+
+.card-subtitle mb-2 custom-meta {
+    color: #d3d3d3 !important;  
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 1;  /* Bu satırın yerini gözden geçirin */
+}
+
+
+.card-subtitle,
+.card-text {
+    color: #e0e0e0; /* Alt metinleri biraz daha açık yap */
+}
+
+@keyframes pulse-once {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 1rem;
+    }
+
+    .buy-btn, .sell-btn {
+        width: 100%;
+    }
+}
+
+.ticker-wrapper {
+    background-color: #1e1e1e;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    z-index: 10;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 30s linear infinite;
+    font-size: 1rem;
+    line-height: 40px;
+    color: #f0b90b;
+    padding-left: 100%;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Ortak yapı */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    z-index: -1;
+}
+
+/* Anasayfa */
+.index .background-image {
+    background-image: url('/static/images/crypto-background.jpg');
+}
+
+/* Live Charts sayfası */
+.charts .background-image {
+    background-image: url('/static/images/crypto-background2.jpg');
+}
+
+/* Fear & Greed sayfası */
+.feargreed .background-image {
+    background-image: url('/static/images/crypto-background3.jpg');
+}

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='images/zobinews-logo.png') }}" alt="ZobiNews" height="40">
+        </a>
+
+        <!-- Mobil Menü Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Menü -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/">NewsTrading</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/charts">Live Charts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/feargreed">Fear & Greed</a>
+                </li>
+            </ul>
+
+            <!-- Türkiye Saati (Mobilde alta düşmesin diye buraya aldım) -->
+            <div id="turkiye-saat" class="text-white ms-lg-3 mt-3 mt-lg-0" style="font-size: 1rem; font-weight: bold;">
+                Yükleniyor...
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="ticker-wrapper">
+    <div id="ticker-text" class="ticker">Yükleniyor...</div>
+</div>
+
+<!-- Bootstrap JS (mobil menü için gerekli) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
