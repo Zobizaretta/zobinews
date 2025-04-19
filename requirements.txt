@@ -7,3 +7,4 @@ transformers==4.51.3
 torch
 tensorflow>=2.10.0
 tf-keras
+huggingface_hub[hf_xet]
